@@ -1,5 +1,13 @@
 # 003-oopsmails-angular-lib
 
+## Simple Way
+
+This will also generate with git repo, i.e, .git folder will also be generated, which means, can generate Angular application first, then create remote github repository after.
+
+```
+npx -p @angular/cli@14 ng new 002-oopsmails-angular-lib-a14 --skip-install
+```
+
 ## Configure local version of @angular/cli
 
 ### Remove global angular if there is
