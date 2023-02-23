@@ -28,6 +28,26 @@ npx -p @angular/cli@14 ng new 002-oopsmails-angular-lib-a14 --skip-install
 - run ng under current folder using `./node_modules/.bin/ng <command>`
 - ./node_modules/.bin/ng version
 
+> to make _ng_ as the shortcut to _./node_modules/.bin/ng_
+
+Run the following command to create an alias for ng:
+
+- For Bash (Linux or macOS):
+
+```
+alias ng="./node_modules/.bin/ng"
+```
+
+- For Command Prompt or PowerShell (Windows):
+
+```
+doskey ng=node_modules\.bin\ng.cmd $*
+```
+
+This will create an alias that points the ng command to the local installation of the Angula
+
+> can also add alias in ~/.bashrc or ~/.zshrc or /c/"Program Files"/Git/etc/bash.bashrc
+
 ### Generate new angular app using ng under current folder
 
 - ./node_modules/.bin/ng new 003-oopsmails-angular-lib --skip-install
@@ -67,3 +87,7 @@ or add following in angular.json
   },
 
 ```
+
+## Generate Library
+
+ng g library oops-lib003 --prefix oopslib003

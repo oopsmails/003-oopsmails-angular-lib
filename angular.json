@@ -91,6 +91,37 @@
           }
         }
       }
+    },
+    "oops-lib003": {
+      "projectType": "library",
+      "root": "projects/oops-lib003",
+      "sourceRoot": "projects/oops-lib003/src",
+      "prefix": "oopslib003",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/oops-lib003/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/oops-lib003/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/oops-lib003/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/oops-lib003/src/test.ts",
+            "tsConfig": "projects/oops-lib003/tsconfig.spec.json",
+            "karmaConfig": "projects/oops-lib003/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
