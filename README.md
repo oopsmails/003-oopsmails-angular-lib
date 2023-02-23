@@ -48,4 +48,14 @@ npm start
 
 - Change globally to use scss:
 ./node_modules/.bin/ng config schematics.@schematics/angular:component.style scss
+
+or add following in angular.json
+
+  "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+
 ```
