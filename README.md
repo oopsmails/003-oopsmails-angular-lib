@@ -91,3 +91,9 @@ or add following in angular.json
 ## Generate Library
 
 ng g library oops-lib003 --prefix oopslib003
+
+## Put in all codes in lib
+
+e.g, C:\oopsmails\003-oopsmails-angular-lib\projects\oops-lib003\src\lib\shared\services
+
+npm i
