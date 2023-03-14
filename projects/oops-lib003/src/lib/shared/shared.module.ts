@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { LoaderServiceLib003 } from './services/loader.service';
 @NgModule({
   declarations: [SortableHeaderDirectiveLib003],
   imports: [CommonModule, BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule],
-  exports: [SortableHeaderDirectiveLib003],
-  providers: [LoaderServiceLib003],
+  exports: [SortableHeaderDirectiveLib003], // adding DecimalPipe here NOT help!
+  providers: [LoaderServiceLib003], // adding DecimalPipe here NOT help!
 })
 export class SharedModule {}

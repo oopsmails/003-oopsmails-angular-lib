@@ -92,8 +92,79 @@ or add following in angular.json
 
 ng g library oops-lib003 --prefix oopslib003
 
-## Put in all codes in lib
+## Work on Library
+
+- Put in all shared things in lib
 
 e.g, C:\oopsmails\003-oopsmails-angular-lib\projects\oops-lib003\src\lib\shared\services
 
-npm i
+- Export
+
+projects\oops-lib003\src\public-api.ts
+
+- Build the Library
+
+At the top level, run, `ng build oops-lib003`.
+This will generate, dist\oops-lib003, at top level
+
+- Pack to tgz if needed
+
+Go to dist\oops-lib003  
+ng pack // check the version of .tgz file is update!!!  
+../../node_modules/.bin/ng pack
+
+ERROR: Error: Unknown command. Did you mean cache?
+
+possible reason, because of angular/cli was NOT installed globally ... will NOT pack for now.
+
+## Using npm link to debug live!
+
+There is a command for this: link. Like publish, you must run it from your library dist directory. It'll create a symlink in npm local registry pointing to your compiled library.
+
+- Ref:
+
+https://indepth.dev/posts/1193/create-your-standalone-angular-library-in-10-minutes
+
+<>
+$ cd ./dist/my-lib
+$ npm link
+
+$ cd my-app
+$ npm link my-lib
+The last step is to make your app using the npm local registry for your library. Run npm link again but specify your library name. Check the node_modules for your app. You must see my-link which a symlink pointing to your library dist directory.
+
+Let's use our library in the app component
+
+```
+$ cd my-lib
+$ ng build --watch
+
+cd /c/oopsmails/003-oopsmails-angular-lib/projects/oops-lib003
+
+../../node_modules/.bin/ng build --watch
+
+$ cd my-app
+$ ng serve
+
+npm start
+
+or
+
+./node_modules/.bin/ng serve
+
+```
+
+## Errors
+
+- Error DecimalPipe, NullInjectorError
+
+main.ts:11 ERROR NullInjectorError: R3InjectorError(AppModule)[CountryDataServiceLib003 -> DecimalPipe -> DecimalPipe -> DecimalPipe]:
+NullInjectorError: No provider for DecimalPipe!
+
+Add `providers: [DecimalPipe],` in app.module.ts.
+
+Add it in library will not work! ... Why?
+
+see ref: https://stackoverflow.com/questions/58277592/nullinjectorerror-no-provider-for-decimalpipe
+
+> You need to provide the DecimalPipe in the Module that provides your Service. For example, if your service is "providedIn: 'root'" then you should provide the DecimalPipe in your AppModule like that:

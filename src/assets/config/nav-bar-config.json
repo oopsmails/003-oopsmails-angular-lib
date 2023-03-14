@@ -1,0 +1,31 @@
+[
+  {
+    "linkText": "Home",
+    "parentLink": "",
+    "menu": false,
+    "submenu": []
+  },
+  {
+    "linkText": "Goto",
+    "parentLink": "",
+    "menu": false,
+    "submenu": [
+      {
+        "childtext": "Json: Search City Filter",
+        "link": "sandbox/search-city"
+      },
+      {
+        "childtext": "Search Plant Filter",
+        "link": "sandbox/search-plant"
+      },
+      {
+        "childtext": "US States",
+        "link": "sandbox/us-state"
+      },
+      {
+        "childtext": "Search US States",
+        "link": "sandbox/search-state"
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+<h3>Hello, Test Around!</h3>
+
+<hr />
+
+<ng-container *ngIf="insts$ | async as insts">
+  <div style="width: 300px">
+    <select
+      #optionSelect
+      [(ngModel)]="selectedOption"
+      (ngModelChange)="onSelectOptionChange($event)"
+      style="width: 100%"
+    >
+      <option *ngFor="let option of options" [value]="option.value">
+        <!-- {{ option.label }}<span *ngIf="selectedOption === option.value"> ({{ numberWithOption }})</span> -->
+        {{ option.label }}<span *ngIf="showingNumberOption === option.value"> ({{ numberWithOption }})</span>
+      </option>
+    </select>
+  </div>
+
+  <hr />
+
+  <div class="table-div">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="twenty">Institution Id</th>
+          <th class="twenty">CUID</th>
+          <th>English Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of insts.slice(0, 20)">
+          <td class="twenty">{{ item.institutionId }}</td>
+          <td class="twenty">{{ item.cuid }}</td>
+          <td>{{ item.englishName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>

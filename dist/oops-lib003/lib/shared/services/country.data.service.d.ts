@@ -1,0 +1,30 @@
+import { Observable } from 'rxjs';
+import { DecimalPipe } from '@angular/common';
+import { CountryLib003 } from '../models';
+import { SortDirection } from '../directives/sortable.directive';
+import * as i0 from "@angular/core";
+export declare class CountryDataServiceLib003 {
+    private pipe;
+    private COMPONENT_NAME;
+    private _loading$;
+    private _search$;
+    private _countries$;
+    private _total$;
+    private _state;
+    constructor(pipe: DecimalPipe);
+    get countries$(): Observable<CountryLib003[]>;
+    get total$(): Observable<number>;
+    get loading$(): Observable<boolean>;
+    get page(): number;
+    get pageSize(): number;
+    get searchTerm(): string;
+    set page(page: number);
+    set pageSize(pageSize: number);
+    set searchTerm(searchTerm: string);
+    set sortColumn(sortColumn: string);
+    set sortDirection(sortDirection: SortDirection);
+    private _set;
+    private _search;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CountryDataServiceLib003, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<CountryDataServiceLib003>;
+}
